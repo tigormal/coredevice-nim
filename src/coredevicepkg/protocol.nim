@@ -67,7 +67,7 @@ proc fromBytes*(msg: seq[byte], key: seq[byte] = @[]): CDMsg {.raises: [ValueErr
                 decData[i] = pos
             # discard randomBytes(addr encData[0], roomLen)
             # discard randomBytes(addr decData[0], roomLen)
-            echo "pos ", pos
+            # echo "pos ", pos
             # echo "encData ", encData
             # echo "decData ", decData
 
@@ -80,8 +80,8 @@ proc fromBytes*(msg: seq[byte], key: seq[byte] = @[]): CDMsg {.raises: [ValueErr
             dctx.init(keyData)
             dctx.decrypt(encData, decData)
             dctx.clear()
-            echo "ENCRYPTED: ", encData.toHex
-            echo "DECRYPTED: ", decData.toHex
+            # echo "ENCRYPTED: ", encData.toHex
+            # echo "DECRYPTED: ", decData.toHex
 
             # Put things back
             copyMem(addr num,   addr decData[0],  1)
@@ -141,7 +141,7 @@ proc bytes*(msg: CDMsg, key: seq[byte] = @[]): seq[byte] {.raises: [ValueError].
                 plaData[i] = pos
             # discard randomBytes(addr encData[0], roomLen)
             # discard randomBytes(addr plaData[0], roomLen)
-            echo "pos ", pos
+            # echo "pos ", pos
             # echo "encData ", encData
             # echo "plaData ", plaData
 
@@ -154,8 +154,8 @@ proc bytes*(msg: CDMsg, key: seq[byte] = @[]): seq[byte] {.raises: [ValueError].
             ectx.init(keyData)
             ectx.encrypt(plaData, encData)
             ectx.clear()
-            echo "PLAIN: ", plaData.toHex
-            echo "ENCRYPTED: ", encData.toHex
+            # echo "PLAIN: ", plaData.toHex
+            # echo "ENCRYPTED: ", encData.toHex
 
             # Put things back
             copyMem(addr num,   addr encData[0],  1)
