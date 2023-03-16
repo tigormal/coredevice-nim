@@ -1,0 +1,17 @@
+{
+    "nim.projectMapping": {
+            // open files under tests using one nimsuggest instance started with root = test/all.nim
+            "projectFile": "tests/all.nim",
+            "fileRegex": "tests/.*\\.nim"
+        },
+    "nim.autoRestart": true,
+    "nim.autoCheckProject": true,
+    "nim.autoCheckFile": true,
+    "nim.provider": "nimsuggest",
+    "nim.project": [
+        "src/coredevice.nim",
+    ],
+    "nim.runOutputDirectory": "bin",
+    "nim.test-project": "tests/all.nim",
+    "nim.useNimsuggestCheck": true,
+}
