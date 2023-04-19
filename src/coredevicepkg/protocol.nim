@@ -1,11 +1,10 @@
 import cascade
 import nimcrypto
 import util
-import stew/byteutils
 import std/random
 
 const sizeBlock = aes256.sizeBlock
-const sizeKey = aes256.sizeKey
+const sizeKey* = aes256.sizeKey
 
 type CDMsgKind* = enum
     None = 0,

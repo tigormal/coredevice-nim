@@ -8,21 +8,17 @@
 import unittest
 
 import coredevicepkg/protocol
-# import coredevicepkg/util
 import uuid
 import stew/byteutils
 import strutils
 import nimcrypto
 import random
 
-# test "correct welcome":
-#   check getWelcomeMessage() == "Hello, World!"]
 let 
     pd = "This is pd" 
     recv = ($genUUIDv4()).replace("-").hexToSeqByte 
     send = ($genUUIDv4()).replace("-").hexToSeqByte
-    # echo recv
-    # echo send
+
 
 test "Message to and from bytes":
     var myMsg = newCDMsg(kind = CDMsgKind.None, payload = pd.toBytes, recvID = recv, sendID = send, ack = true)
